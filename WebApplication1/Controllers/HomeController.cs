@@ -12,7 +12,6 @@ namespace WebApplication1.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             return View();
@@ -21,6 +20,14 @@ namespace WebApplication1.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult NameDisplay(UserModel user)
+        {
+            if (!ModelState.IsValid)
+				user.Name = "Error";
+            return View(user);         
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,0 +1,11 @@
+﻿@model UserModel
+
+@{
+	ViewData["Title"] = "Name display";
+}
+
+<h1>
+	Hello, @Model.Name!
+</h1>
+
+<span asp-validation-for="Name" class="text-danger"></span>
